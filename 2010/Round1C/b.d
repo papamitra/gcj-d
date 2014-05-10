@@ -6,7 +6,7 @@ import std.array;
 import std.algorithm;
 import std.bigint;
 
-int helper(uint[] ary){
+int helper(BigInt[] ary){
   ulong len = ary.length;
   if(len == 2){
     return 0;
@@ -19,11 +19,11 @@ int helper(uint[] ary){
 void solve(int i){
   
   auto lpc = map!"to!(int)(a)"(readln().chomp().split());
-  auto l = lpc[0];
+  auto l = BigInt(lpc[0]);
   auto p = lpc[1];
   auto c = lpc[2];
 
-  uint[] ary = [l];
+  BigInt[] ary = [l];
   do{
     l *= c;
     ary ~= l;
